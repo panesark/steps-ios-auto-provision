@@ -43,6 +43,7 @@ class KeychainHelper
   private
 
   def import_certificate(path, passphrase)
+    # $ symbol not parsed correctly
     cmd_params = ['security', 'import', "\"#{path}\"", '-k', "\'#{@keychain_path}\'", '-P', "\"#{passphrase}\"", '-A']
     debug_params = cmd_params.dup
     debug_params[6] = '"****"'
